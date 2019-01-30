@@ -1,14 +1,9 @@
 <template>
   <div class="index">
     <h1>{{ msg }}</h1>
-    <h2><a href="admin.html">admin Links</a></h2>
-    <h2><a href="test.html">test Links</a></h2>
-    <van-button type="default" class="b1">默认按钮</van-button>
-    <van-button type="primary">主要按钮</van-button>
-    <van-button type="warning">警告按钮</van-button>
-    <van-button type="danger">危险按钮</van-button>
+
     <div class="test">
-      hello
+      hello test
     </div>
   </div>
 </template>
