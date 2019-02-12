@@ -145,9 +145,10 @@ exports.htmlPlugin = function () {
     if(filename === 'index') {
       chunks = ['manifest', 'vendor', 'vendor-index', 'common-api', filename];
     }
-    if(filename === 'test') {
-      chunks = ['manifest', 'vendor', 'vendor-test', 'common-api', filename];
+    if(filename === 'detail') {
+      chunks = ['manifest', 'vendor', 'vendor-detail', 'common-api', filename];
     }
+
     let conf = {
       // 模板来源
       template: filePath,

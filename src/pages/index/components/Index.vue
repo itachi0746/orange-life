@@ -1,54 +1,169 @@
 <template>
   <div class="index">
-    <h1>{{ msg }}</h1>
-    <h2><a href="admin.html">admin Links</a></h2>
-    <h2><a href="test.html">test Links</a></h2>
-    <van-button type="default" class="b1">默认按钮</van-button>
-    <van-button type="primary">主要按钮</van-button>
-    <van-button type="warning">警告按钮</van-button>
-    <van-button type="danger">危险按钮</van-button>
-    <div class="test">
-      hello
+    <header>
+      <van-row>
+        <van-col span="6">
+          <div class="header-name">生活服务</div>
+        </van-col>
+        <van-col span="18">
+          <div class="input-box" @click="clickSearch">
+            <van-icon name="search" class="search-icon" />
+            <input type="text" placeholder="输入关键字, 发现你所想" readonly>
+          </div>
+        </van-col>
+      </van-row>
+    </header>
+    <div class="banner">
+      <van-swipe :autoplay="5000" indicator-color="white">
+        <van-swipe-item>1</van-swipe-item>
+        <van-swipe-item>2</van-swipe-item>
+
+      </van-swipe>
     </div>
+    <div class="special-area">
+      <div class="s-header">
+        <span>话费专区</span>
+        <van-icon name="arrow" />
+      </div>
+      <div class="s-main">
+        <div class="s-item">
+          <div class="s-item-img"></div>
+          <div class="s-item-name">
+            移动话费200元
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="btm-fill"></div>
+    <Footer></Footer>
+
   </div>
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Index2'
-    }
+  import Footer from '../../../components/Footer';
+
+  export default {
+    name: 'Index',
+    data () {
+      return {
+        msg: 'Welcome to Index2',
+        value: '',
+        isSearch: false
+      }
+    },
+    methods: {
+      clickSearch() {
+//        console.log('12');
+        this.$router.push({name: 'Search', params: {}})
+      }
+    },
+    mounted() {
+    },
+
+    components: {
+      Footer
+    },
+
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
+  /*@import "src/styles/mixin";*/
+  @import "../../../styles/common";
+  @import "../../../styles/mixin";
+
   .index {
-    width: 50%;
-    margin: 0 auto;
+    font-size: 28px;
   }
-  h1, h2 {
-    font-weight: normal;
+  header {
+    height: 90px;
+    width: 100%;
+    padding: 13px 0;
+    font-size: 28px;
+
+    .header-name {
+      width: 100%;
+      /*height: 100%;*/
+      height: 62px;
+      @include defaultFlex
+    }
+    .input-box {
+      width: 540px;
+      /*height: 100%;*/
+      height: 62px;
+      border-radius: 5px;
+      background-color: #ededed;
+      padding: 14px 0 14px 76px;
+      color: #979797;
+      display: flex;
+      align-items: center;
+      i {
+        font-size: 40px;
+      }
+      input {
+        width: 400px;
+        background-color: #ededed;
+
+      }
+
+    }
+    .search-icon {
+      color: #979797;
+    }
+
   }
-  ul {
-    list-style-type: none;
-    padding: 0;
+
+  .btm-fill {
+    height: 97px;
+    width: 100%;
   }
-  li {
-    display: inline-block;
-    margin: 0 10px;
+  .banner {
+    height: 290px;
+    width: 100%;
+    margin-bottom: 48px;
+
+    .van-swipe {
+      height: 100%;
+    }
+    .van-swipe-item {
+      background-color: #0000ff;
+    }
   }
-  a {
-    color: #42b983;
+  .special-area {
+    padding: 20px 0;
+    margin-bottom: 25px;
+    .s-header {
+      @include defaultFlex;
+      padding: 0 50px;
+      i {
+
+      }
+    }
+    .s-main {
+      padding: 20px 0px;
+      margin: 20px 20px 0 20px;
+      border-top: 1px solid black;
+      @include fj();
+      .s-item {
+        width: 200px;
+        height: 250px;
+        /*background-color: blue;*/
+      }
+      .s-item-img {
+        width: 100%;
+        height: 200px;
+        background-color: #000000;
+      }
+      .s-item-name {
+        @include defaultFlex
+      }
+    }
+    span {
+      font-size: 35px;
+      font-weight:bold;
+    }
   }
-  .b1 {
-    padding: 0 50px;
-    font-size: 20px;
-  }
-  .test {
-    font-size: 40px;
-  }
+
 </style>

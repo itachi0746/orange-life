@@ -3,15 +3,20 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// import BootstrapVue from 'bootstrap-vue'
 import { Button, Cell } from 'vant'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-import $ from '../../common'
-console.log($('body'))
+import myModule from '../../common';
 
-// Vue.use(BootstrapVue)
+import { Row, Col } from 'vant';
+import { Icon } from 'vant';
+import { Swipe, SwipeItem } from 'vant';
+import { Card } from 'vant';
+
+Vue.use(Card);
+Vue.use(Swipe).use(SwipeItem);
+Vue.use(Icon);
+Vue.use(Row).use(Col);
+
 Vue.use(Button).use(Cell)
 
 Vue.config.productionTip = false

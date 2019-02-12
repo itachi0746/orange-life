@@ -3,23 +3,26 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// import BootstrapVue from 'bootstrap-vue'
 import { Button, Cell } from 'vant'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import {
+  GoodsAction,
+  GoodsActionBigBtn,
+  GoodsActionMiniBtn
+} from 'vant'
 
-import $ from '../../common'
-console.log($('body'))
-
-// Vue.use(BootstrapVue)
+Vue
+  .use(GoodsAction)
+  .use(GoodsActionBigBtn)
+  .use(GoodsActionMiniBtn)
 Vue.use(Button).use(Cell)
 
-Vue.config.productionTip = false
+import myModule from '../../common'
 
+Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {App},
   template: '<App/>'
 })

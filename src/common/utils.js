@@ -44,4 +44,20 @@ function GoToPage(pageName,defaultUrl,paramter) {
   location.href=defaultUrl+"?"+theParamterArray.join('&');
 }
 
-export {getUrlParms,IOSConfig}
+//获取窗口可视范围的高度
+function getClientHeight() {
+  let clientHeight = 0;
+  // if (document.body.clientHeight && document.documentElement.clientHeight) {
+  //   debugger
+  //   clientHeight = (document.body.clientHeight < document.documentElement.clientHeight) ? document.body.clientHeight : document.documentElement.clientHeight;
+  // } else {
+  //   clientHeight = (document.body.clientHeight > document.documentElement.clientHeight) ? document.body.clientHeight : document.documentElement.clientHeight;
+  // }
+  if (document.documentElement.clientHeight) {
+    clientHeight = document.documentElement.clientHeight
+  }
+  console.log('窗口高度:',clientHeight);
+  return clientHeight;
+}
+
+export {getUrlParms,IOSConfig,getClientHeight}

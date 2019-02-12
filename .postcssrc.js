@@ -9,7 +9,7 @@ module.exports = {
       browsers: ['Android >= 4.0', 'iOS >= 7']
     },
     'postcss-pxtorem': {
-      'rootValue': 20,  // 根元素大小px
+      'rootValue': 40,  // 根元素大小px
       'propList': ['*']  // *表示通用,所有属性都转为rem
     }
   }
