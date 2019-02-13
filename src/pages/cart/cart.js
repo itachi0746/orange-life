@@ -3,28 +3,18 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import { Button, Cell } from 'vant'
-import {
-  GoodsAction,
-  GoodsActionBigBtn,
-  GoodsActionMiniBtn
-} from 'vant'
-import { Sku } from 'vant';
 
-Vue.use(Sku);
-Vue
-  .use(GoodsAction)
-  .use(GoodsActionBigBtn)
-  .use(GoodsActionMiniBtn)
-Vue.use(Button).use(Cell)
+import myModule from '../../common';
+import { Row, Col } from 'vant';
+import { Icon } from 'vant';
 
-import myModule from '../../common'
-
+Vue.use(Icon);
+Vue.use(Row).use(Col);
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  components: {App},
+  components: { App },
   template: '<App/>'
 })

@@ -148,6 +148,9 @@ exports.htmlPlugin = function () {
     if(filename === 'detail') {
       chunks = ['manifest', 'vendor', 'vendor-detail', 'common-api', filename];
     }
+    if(filename === 'cart') {
+      chunks = ['manifest', 'vendor', 'vendor-cart', 'common-api', filename];
+    }
 
     let conf = {
       // 模板来源
@@ -168,6 +171,7 @@ exports.htmlPlugin = function () {
         chunksSortMode: function (chunk1, chunk2) {
           var order1 = chunks.indexOf(chunk1.names[0])
           var order2 = chunks.indexOf(chunk2.names[0])
+
           return order1 - order2
         },
       })

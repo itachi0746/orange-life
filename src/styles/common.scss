@@ -7,9 +7,9 @@ body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, l
   border: none;
   font-weight: normal;
   //font-family: "Microsoft Yahei", Arial, sans-serif;
-  //-webkit-box-sizing: border-box;
-  //-moz-box-sizing: border-box;
-  //box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-tap-highlight-color:transparent;
   -webkit-font-smoothing: antialiased;
   &:hover{
@@ -49,4 +49,8 @@ textarea { -webkit-appearance: none;}
 
 .dn {
   display: none;
+}
+.scroll-y {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;/* 解决ios滑动不流畅问题 */
 }

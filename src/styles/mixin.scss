@@ -1,7 +1,6 @@
-$blue: #3297f5;
 $bc: #ededed;
 $fc: #fff;
-$payColor: #ff5000;
+$btnColor: #f4456c;
 $mainColor: #f9ce04;
 
 // 背景图片地址和大小
@@ -17,6 +16,12 @@ $mainColor: #f9ce04;
   -ms-border-radius: $radius;
   -o-border-radius: $radius;
   border-radius: $radius;
+}
+
+@mixin borderBox($box: border-box) {
+  -webkit-box-sizing: $box;
+  -moz-box-sizing: $box;
+  box-sizing: $box;
 }
 
 //定位全屏

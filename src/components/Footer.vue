@@ -44,7 +44,7 @@ export default {
   @import "src/styles/mixin";
   .footer {
     font-size: 28px;
-    height: 97px;
+    height: 95px;
     width: 100%;
     position: fixed;
     bottom: 0;
