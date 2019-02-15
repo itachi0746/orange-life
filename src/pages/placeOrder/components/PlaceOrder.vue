@@ -55,6 +55,11 @@
         </li>
       </ul>
     </div>
+    <!--<van-submit-bar-->
+      <!--:price="3050"-->
+      <!--button-text="提交订单"-->
+      <!--@submit=""-->
+    <!--/>-->
     <footer ref="footer">
       <van-row>
         <van-col span="10">
