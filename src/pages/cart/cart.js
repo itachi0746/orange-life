@@ -7,7 +7,11 @@ import router from './router'
 import myModule from '../../common';
 import { Row, Col } from 'vant';
 import { Icon } from 'vant';
+import { Stepper } from 'vant';
+import { Checkbox } from 'vant';
 
+Vue.use(Checkbox);
+Vue.use(Stepper);
 Vue.use(Icon);
 Vue.use(Row).use(Col);
 Vue.config.productionTip = false

@@ -4,7 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import { Row, Col } from 'vant';
+import { Icon } from 'vant';
+import { Button } from 'vant';
 
+Vue.use(Button);
+Vue.use(Icon);
 Vue.use(Row).use(Col);
 import myModule from '../../common';
 

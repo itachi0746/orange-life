@@ -151,6 +151,21 @@ exports.htmlPlugin = function () {
     if(filename === 'cart') {
       chunks = ['manifest', 'vendor', 'vendor-cart', 'common-api', filename];
     }
+    if(filename === 'list') {
+      chunks = ['manifest', 'vendor', 'vendor-list', 'common-api', filename];
+    }
+    if(filename === 'placeOrder') {
+      chunks = ['manifest', 'vendor', 'vendor-placeOrder', 'common-api', filename];
+    }
+    if(filename === 'order') {
+      chunks = ['manifest', 'vendor', 'vendor-order', 'common-api', filename];
+    }
+    if(filename === 'myOrder') {
+      chunks = ['manifest', 'vendor', 'vendor-myOrder', 'common-api', filename];
+    }
+    if(filename === 'profile') {
+      chunks = ['manifest', 'vendor', 'vendor-profile', 'common-api', filename];
+    }
 
     let conf = {
       // 模板来源

@@ -21,12 +21,12 @@
       </van-swipe>
     </div>
     <div class="special-area">
-      <div class="s-header">
+      <div class="s-header" @click="clickHF">
         <span>话费专区</span>
         <van-icon name="arrow" />
       </div>
       <div class="s-main">
-        <div class="s-item">
+        <div class="s-item" @click="clickItem">
           <div class="s-item-img"></div>
           <div class="s-item-name">
             移动话费200元
@@ -36,12 +36,13 @@
     </div>
     <div class="btm-fill"></div>
     <Footer></Footer>
-
+    <Loading v-if="loading"></Loading>
   </div>
 </template>
 
 <script>
   import Footer from '../../../components/Footer';
+  import Loading from '../../../components/Loading';
 
   export default {
     name: 'Index',
@@ -49,20 +50,30 @@
       return {
         msg: 'Welcome to Index2',
         value: '',
-        isSearch: false
+        isSearch: false,
+        loading: false
       }
     },
     methods: {
       clickSearch() {
 //        console.log('12');
         this.$router.push({name: 'Search', params: {}})
+      },
+      clickHF() {
+//        this.loading = true;
+        myModule.goToPage('','list.html',{})
+      },
+      clickItem() {
+//        this.loading = true;
+        myModule.goToPage('','detail.html',{})
+
       }
     },
     mounted() {
     },
 
     components: {
-      Footer
+      Footer,Loading
     },
 
   }

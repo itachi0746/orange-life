@@ -2,7 +2,7 @@
   <div class="cart">
     <div class="cart-list" ref="cartList">
       <div class="header" ref="header">
-        <span>编辑</span>
+        <span @click="clickEdit">{{msg}}</span>
       </div>
       <div ref="cartUlBox" class="cartUl-box scroll-y">
         <ul class="">
@@ -10,7 +10,7 @@
             <van-row>
               <van-col span="2">
                 <div class="select-icon">
-                  <van-icon name="circle" />
+                  <van-checkbox v-model="checked"></van-checkbox>
                 </div>
               </van-col>
               <van-col span="6">
@@ -24,35 +24,11 @@
                     名字2222
                   </div>
                   <div class="goods-num">
-
-                    <span>￥100</span>
-                    <span>×1</span>
-                  </div>
-                </div>
-              </van-col>
-            </van-row>
-          </li>
-          <li class="cart-list-li">
-            <van-row>
-              <van-col span="2">
-                <div class="select-icon">
-                  <van-icon name="circle" />
-                </div>
-              </van-col>
-              <van-col span="6">
-                <div class="goods-img">
-                  <img src="../assets/logo.png" alt="">
-                </div>
-              </van-col>
-              <van-col span="16">
-                <div class="goods-data">
-                  <div class="goods-name">
-                    名字2222
-                  </div>
-                  <div class="goods-num">
-
-                    <span>￥100</span>
-                    <span>×1</span>
+                    <span class="unit-price">￥100</span>
+                    <span v-show="!isEdit">×1</span>
+                    <span v-show="isEdit">
+                      <van-stepper v-model="goodsNum" disable-input />
+                    </span>
                   </div>
                 </div>
               </van-col>
@@ -67,8 +43,7 @@
       <van-row>
         <van-col span="8">
           <div class="sel-all">
-            <van-icon name="circle" />
-            <span>全选</span>
+            <van-checkbox v-model="checked">全选</van-checkbox>
           </div>
         </van-col>
         <van-col span="10">
@@ -77,8 +52,11 @@
           </div>
         </van-col>
         <van-col span="6">
-          <div class="action-btn">
+          <div class="action-btn" v-show="!isEdit">
             提交订单
+          </div>
+          <div class="action-btn" v-show="isEdit">
+            删除所选商品
           </div>
         </van-col>
       </van-row>
@@ -88,36 +66,51 @@
 </template>
 
 <script>
-  import Footer from '../../../components/Footer';
+  import Footer from '../../../components/Footer'
 
   export default {
     name: 'Cart',
     data () {
       return {
+        isEdit: false,
+        goodsNum: 6,
+        msg: '编辑',
+        checked: false
       }
     },
     methods: {
-      setCartListHeight() {
-        let wh = myModule.getClientHeight();
-        let headerH = this.$refs.header.offsetHeight;
-        let btmFillH = this.$refs.btmFill.offsetHeight;
-        let footerH = this.$refs.footer.offsetHeight;
-        let theH = wh - headerH - btmFillH;
+      setCartListHeight () {
+        let wh = myModule.getClientHeight()
+        let headerH = this.$refs.header.offsetHeight
+        let btmFillH = this.$refs.btmFill.offsetHeight
+        let footerH = this.$refs.footer.offsetHeight
+        let theH = wh - headerH - btmFillH
 //        debugger
-        this.$refs.cartUlBox.style.height = theH + 'px';
+        this.$refs.cartUlBox.style.height = theH + 'px'
+      },
+      clickEdit () {
+        if(this.isEdit) {
+          this.isEdit = false;
+          this.msg = '编辑'
+        }else {
+          this.isEdit = true;
+          this.msg = '完成'
+
+        }
       }
-    },
-    created() {
 
     },
-    mounted() {
+    created () {
+
+    },
+    mounted () {
 //      this.$nextTick(()=> {
 //        this.setCartListHeight()
 //      })
-      let me = this;
+      let me = this
       setTimeout(function () {
         me.setCartListHeight()
-      },300)
+      }, 300)
     },
 
     components: {
@@ -134,6 +127,7 @@
   .cart {
     font-size: 28px;
   }
+
   .cart-list {
     width: 100%;
 
@@ -156,7 +150,7 @@
       background-color: #fff;
       margin-bottom: 10px;
     }
-    .goods-img,.select-icon,.goods-data {
+    .goods-img, .select-icon, .goods-data {
       width: 100%;
       height: 220px;
     }
@@ -180,12 +174,19 @@
       display: flex;
       justify-content: space-between;
       padding: 0 20px;
+
+      &>span {
+        height: 60px;
+        @include defaultFlex;
+      }
     }
   }
+
   .btm-fill {
     width: 100%;
     height: 190px;
   }
+
   .btm-p {
     width: 100%;
     height: 95px;
@@ -195,6 +196,7 @@
     z-index: 100;
     /*background-color: #000000;*/
   }
+
   .sel-all {
     height: 95px;
     line-height: 95px;
@@ -204,6 +206,7 @@
       margin-left: 5px;
     }
   }
+
   .total-price {
     width: 100%;
     height: 100%;
@@ -211,6 +214,7 @@
     line-height: 95px;
     padding-right: 10px;
   }
+
   .action-btn {
     width: 100%;
     height: 95px;
@@ -220,4 +224,5 @@
     background-color: $btnColor;
 
   }
+
 </style>

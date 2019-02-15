@@ -3,7 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import { Row, Col } from 'vant';
 
+Vue.use(Row).use(Col);
 import myModule from '../../common';
 
 Vue.config.productionTip = false

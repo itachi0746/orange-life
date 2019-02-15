@@ -4,7 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import { Row, Col } from 'vant';
+import { Cell, CellGroup } from 'vant';
+import { Loading } from 'vant';
 
+Vue.use(Loading);
+Vue.use(Cell).use(CellGroup);
 Vue.use(Row).use(Col);
 import myModule from '../../common';
 

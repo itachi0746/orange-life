@@ -1,16 +1,10 @@
 <template>
   <!--  开始-->
-  <div class="footer">
+  <div class="footer" id="footer">
     <footer>
       <van-row class="footer-box">
-        <van-col span="8" class="footer-i-box">
-          <div class="footer-item">首页</div>
-        </van-col>
-        <van-col span="8">
-          <div class="footer-item">购物车</div>
-        </van-col>
-        <van-col span="8">
-          <div class="footer-item">我的</div>
+        <van-col span="8" v-for="(item) in footerArr" :key="item.id">
+          <div class="footer-item" @click="clickFooter(item.link)">{{item.name}}</div>
         </van-col>
       </van-row>
     </footer>
@@ -23,6 +17,23 @@
 export default {
   data() {
     return {
+      footerArr: [
+        {
+          id: 0,
+          name: '首页',
+          link: 'index.html'
+        },
+        {
+          id: 1,
+          name: '购物车',
+          link: 'cart.html'
+        },
+        {
+          id: 2,
+          name: '我的',
+          link: 'profile.html'
+        },
+      ]
     }
   },
 
@@ -30,7 +41,12 @@ export default {
 
   computed: {},
 
-  methods: {},
+  methods: {
+    clickFooter(link) {
+      console.log(link);
+      myModule.goToPage('',link,{});
+    }
+  },
 
   created() {},
 
@@ -44,7 +60,7 @@ export default {
   @import "src/styles/mixin";
   .footer {
     font-size: 28px;
-    height: 95px;
+    /*height: 95px;*/
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -53,11 +69,11 @@ export default {
     border-top: 2px solid black;
   }
   footer {
-    height: 97px;
+    /*height: 97px;*/
     width: 100%;
 
     div {
-      height: 100%;
+      height: 2.375rem;
     }
 
     .footer-item {
