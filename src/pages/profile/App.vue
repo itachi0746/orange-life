@@ -9,8 +9,9 @@ export default {
   name: 'App'
 }
 </script>
+<style lang="scss">
+  @import "../../styles/common";
 
-<style>
   .van-cell__left-icon, .van-cell__right-icon {
     height: 1rem;
     min-width: 1em;

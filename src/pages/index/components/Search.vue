@@ -106,7 +106,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-  @import "../../../styles/common";
+  /*@import "../../../styles/common";*/
   @import "../../../styles/mixin";
 
   .search {

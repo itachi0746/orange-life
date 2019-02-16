@@ -41,7 +41,7 @@
     <div class="btm-fill" ref="btmFill"></div>
     <div class="btm-p">
       <van-row>
-        <van-col span="8">
+        <van-col span="7">
           <div class="sel-all">
             <van-checkbox v-model="checked">全选</van-checkbox>
           </div>
@@ -51,13 +51,15 @@
             ￥100.00
           </div>
         </van-col>
-        <van-col span="6">
-          <div class="action-btn" v-show="!isEdit">
-            提交订单
-          </div>
-          <div class="action-btn" v-show="isEdit">
-            删除所选商品
-          </div>
+        <van-col span="7">
+          <!--<div class="action-btn" v-show="!isEdit">-->
+            <!--提交订单-->
+          <!--</div>-->
+          <!--<div class="action-btn" v-show="isEdit">-->
+            <!--删除所选商品-->
+          <!--</div>-->
+          <van-button type="default" :loading="clickBtn" v-show="!isEdit" @click="clickSubmit">提交订单</van-button>
+          <van-button type="default" :loading="clickBtn" v-show="isEdit" @click="clickDel">删除所选商品</van-button>
         </van-col>
       </van-row>
     </div>
@@ -75,7 +77,8 @@
         isEdit: false,
         goodsNum: 6,
         msg: '编辑',
-        checked: false
+        checked: false,
+        clickBtn: false
       }
     },
     methods: {
@@ -83,7 +86,6 @@
         let wh = myModule.getClientHeight()
         let headerH = this.$refs.header.offsetHeight
         let btmFillH = this.$refs.btmFill.offsetHeight
-        let footerH = this.$refs.footer.offsetHeight
         let theH = wh - headerH - btmFillH
 //        debugger
         this.$refs.cartUlBox.style.height = theH + 'px'
@@ -95,8 +97,13 @@
         }else {
           this.isEdit = true;
           this.msg = '完成'
-
         }
+      },
+      clickSubmit() {
+        this.clickBtn = true;
+      },
+      clickDel() {
+        this.clickBtn = true;
       }
 
     },
@@ -121,7 +128,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  @import "../../../styles/common";
+  /*@import "../../../styles/common";*/
   @import "../../../styles/mixin";
 
   .cart {
@@ -222,7 +229,6 @@
     line-height: 95px;
     border-radius: 30px;
     background-color: $btnColor;
-
   }
 
 </style>

@@ -11,7 +11,9 @@ import { Row, Col } from 'vant';
 import { Icon } from 'vant';
 import { Swipe, SwipeItem } from 'vant';
 import { Card } from 'vant';
+import { Toast } from 'vant';
 
+Vue.use(Toast);
 Vue.use(Card);
 Vue.use(Swipe).use(SwipeItem);
 Vue.use(Icon);

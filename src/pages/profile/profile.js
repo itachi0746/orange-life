@@ -6,7 +6,9 @@ import router from './router'
 import { Row, Col } from 'vant';
 import { Cell, CellGroup } from 'vant';
 import { Loading } from 'vant';
+import { Button } from 'vant';
 
+Vue.use(Button);
 Vue.use(Loading);
 Vue.use(Cell).use(CellGroup);
 Vue.use(Row).use(Col);

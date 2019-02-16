@@ -15,7 +15,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  @import "../../../styles/common";
+  /*@import "../../../styles/common";*/
   @import "../../../styles/mixin";
 
 </style>

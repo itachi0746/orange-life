@@ -10,7 +10,10 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  @import "../../styles/common";
+  @import "../../styles/mixin";
+
   .van-stepper__minus, .van-stepper__plus {
     width: 60px;
     height: 60px;
@@ -57,5 +60,17 @@ export default {
     width: 1rem;
     height: 1rem;
     border: 0.05rem solid #e5e5e5;
+  }
+  .van-button {
+    height: 95px;
+    line-height: 95px;
+    border-radius: 30px;
+    box-sizing: border-box;
+    font-size: 28px;
+    width: 100%;
+    background-color: $btnColor;
+  }
+  .van-button__text {
+    white-space:nowrap;
   }
 </style>

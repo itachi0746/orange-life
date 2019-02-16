@@ -6,7 +6,6 @@
         1345678467
       </div>
     </div>
-
     <div class="body" ref="body">
       <div class="p-item" @click="clickMyOrder">
         <van-cell title="我的订单" is-link />
@@ -15,7 +14,6 @@
         <van-cell title="联系客服" is-link />
       </div>
     </div>
-
     <Loading v-if="loading"></Loading>
     <Footer ref="footer"></Footer>
   </div>
@@ -67,7 +65,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  @import "../../../styles/common";
+  /*@import "../../../styles/common";*/
   @import "../../../styles/mixin";
 
   .header {
@@ -101,7 +99,7 @@
     line-height: 1rem;
     font-size: 0.75rem;
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
     padding: 28px 25px;
 
   }

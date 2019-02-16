@@ -81,8 +81,6 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  /*@import "src/styles/mixin";*/
-  @import "../../../styles/common";
   @import "../../../styles/mixin";
 
   .index {

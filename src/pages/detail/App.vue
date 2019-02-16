@@ -10,7 +10,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  @import "../../styles/common";
   .van-icon-chat-o {
     font-size: 30px;
   }

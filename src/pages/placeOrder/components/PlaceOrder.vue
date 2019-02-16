@@ -55,28 +55,28 @@
         </li>
       </ul>
     </div>
-    <!--<van-submit-bar-->
-      <!--:price="3050"-->
-      <!--button-text="提交订单"-->
-      <!--@submit=""-->
-    <!--/>-->
-    <footer ref="footer">
-      <van-row>
-        <van-col span="10">
-          <div class="total-price">
-            合计: <span>90.00</span>元
-          </div>
-        </van-col>
-        <van-col span="14">
-          <div class="sub-btn-box">
-            <div class="sub-btn">
-              提交订单
-            </div>
-          </div>
-        </van-col>
-      </van-row>
-
-    </footer>
+    <van-submit-bar ref="footer" id="van-submit-bar"
+                    :loading="submit"
+      :price="3050"
+      button-text="提交订单"
+      @submit="clickSubmit"
+    />
+    <!--<footer ref="footer">-->
+      <!--<van-row>-->
+        <!--<van-col span="10">-->
+          <!--<div class="total-price">-->
+            <!--合计: <span>90.00</span>元-->
+          <!--</div>-->
+        <!--</van-col>-->
+        <!--<van-col span="14">-->
+          <!--<div class="sub-btn-box">-->
+            <!--<div class="sub-btn">-->
+              <!--提交订单-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</van-col>-->
+      <!--</van-row>-->
+    <!--</footer>-->
   </div>
 </template>
 
@@ -85,7 +85,7 @@
     name: 'PlaceOrder',
     data () {
       return {
-
+        submit: false
       }
     },
     mounted() {
@@ -96,9 +96,12 @@
     methods: {
       setBoxHeight() {
         let headerH = this.$refs.header.offsetHeight;
-        let footerH = this.$refs.footer.offsetHeight;
+        let footerH = document.getElementById('van-submit-bar').offsetHeight;
         let theH = myModule.getClientHeight();
         this.$refs.orderListBox.style.height = theH - headerH - footerH + 'px';
+      },
+      clickSubmit() {
+        this.submit = true;
       }
     }
   }
@@ -106,7 +109,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  @import "../../../styles/common";
+  /*@import "../../../styles/common";*/
   @import "../../../styles/mixin";
 
   .placeOrder {
@@ -174,6 +177,7 @@
 
     li {
       margin-bottom: 20px;
+      background-color: #fff;
 
       .img-box {
         width: 100%;

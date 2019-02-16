@@ -10,7 +10,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  @import "../../styles/common";
   /*轮播指示*/
   .van-swipe__indicator {
     width: 30px;

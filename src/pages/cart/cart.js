@@ -9,7 +9,9 @@ import { Row, Col } from 'vant';
 import { Icon } from 'vant';
 import { Stepper } from 'vant';
 import { Checkbox } from 'vant';
+import { Button } from 'vant';
 
+Vue.use(Button);
 Vue.use(Checkbox);
 Vue.use(Stepper);
 Vue.use(Icon);

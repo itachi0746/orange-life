@@ -51,6 +51,7 @@
 
     .time {
       display: flex;
+      /*align-items: center;*/
     }
     b {
       margin: 0 5px;
@@ -59,6 +60,8 @@
       padding: 5px;
       background-color: #666;
       color: #ffffff;
+      @include defaultFlex;
+
     }
 
     span:nth-child(1) {
