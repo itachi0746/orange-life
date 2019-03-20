@@ -69,6 +69,7 @@
 
 <script>
   import Footer from '../../../components/Footer'
+  import { myModule } from '../../../common'
 
   export default {
     name: 'Cart',

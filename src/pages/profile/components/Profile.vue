@@ -22,6 +22,7 @@
 <script>
   import Footer from '../../../components/Footer'
   import Loading from '../../../components/Loading'
+  import { myModule } from '../../../common'
 
   export default {
     name: 'Profile',

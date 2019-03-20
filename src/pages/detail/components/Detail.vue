@@ -63,7 +63,9 @@
 </template>
 
 <script>
-export default {
+  import { myModule } from '../../../common'
+
+  export default {
   name: 'Detail',
   data () {
     return {

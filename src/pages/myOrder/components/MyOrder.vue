@@ -77,6 +77,7 @@
 
 <script>
   import Countdown from '../../../components/Countdown.vue';
+  import { myModule } from '../../../common'
 
   export default {
     name: 'MyOrder',

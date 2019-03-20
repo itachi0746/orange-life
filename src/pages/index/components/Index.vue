@@ -43,12 +43,13 @@
 <script>
   import Footer from '../../../components/Footer';
   import Loading from '../../../components/Loading';
+  import { myModule } from '../../../common'
 
   export default {
     name: 'Index',
     data () {
       return {
-        msg: 'Welcome to Index2',
+        msg: 'Welcome to Index2222',
         value: '',
         isSearch: false,
         loading: false

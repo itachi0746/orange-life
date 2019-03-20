@@ -4,7 +4,6 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-import myModule from '../../common';
 import { Row, Col } from 'vant';
 import { Icon } from 'vant';
 import { Stepper } from 'vant';

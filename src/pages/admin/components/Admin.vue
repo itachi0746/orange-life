@@ -4,6 +4,8 @@
 </template>
 
 <script>
+  import { myModule } from '../../../common'
+
   export default {
     name: 'HelloWorld',
     data () {

@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import { Button, Cell } from 'vant'
 
-import myModule from '../../common';
+// import myModule from '../../common';
 
 import { Row, Col } from 'vant';
 import { Icon } from 'vant';

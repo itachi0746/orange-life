@@ -60,4 +60,4 @@ function getClientHeight () {
   return clientHeight
 }
 
-export { getUrlParms, IOSConfig, getClientHeight, goToPage }
+export default { getUrlParms, IOSConfig, getClientHeight, goToPage }

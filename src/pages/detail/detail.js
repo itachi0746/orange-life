@@ -18,7 +18,7 @@ Vue
   .use(GoodsActionMiniBtn)
 Vue.use(Button).use(Cell)
 
-import myModule from '../../common'
+// import myModule from '../../common'
 
 Vue.config.productionTip = false
 /* eslint-disable no-new */

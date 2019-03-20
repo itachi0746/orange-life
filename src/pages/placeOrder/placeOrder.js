@@ -8,7 +8,7 @@ import { SubmitBar } from 'vant';
 
 Vue.use(SubmitBar);
 Vue.use(Row).use(Col);
-import myModule from '../../common';
+// import myModule from '../../common';
 
 Vue.config.productionTip = false
 /* eslint-disable no-new */

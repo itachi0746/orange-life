@@ -81,6 +81,8 @@
 </template>
 
 <script>
+  import { myModule } from '../../../common'
+
   export default {
     name: 'PlaceOrder',
     data () {

@@ -12,7 +12,7 @@ Vue.use(Button);
 Vue.use(Loading);
 Vue.use(Cell).use(CellGroup);
 Vue.use(Row).use(Col);
-import myModule from '../../common';
+// import myModule from '../../common';
 
 Vue.config.productionTip = false
 /* eslint-disable no-new */
