@@ -140,33 +140,34 @@ exports.htmlPlugin = function () {
     //   ['manifest', 'vendor', 'vendor-admin', 'common-api', filename] :
     //   ['manifest', 'vendor', 'vendor-index', 'common-api', filename]
     let chunks;
-    if(filename === 'admin') {
-      chunks = ['manifest', 'vendor', 'vendor-admin', 'common-api', filename];
-    }
-    if(filename === 'index') {
-      chunks = ['manifest', 'vendor', 'vendor-index', 'common-api', filename];
-    }
-    if(filename === 'detail') {
-      chunks = ['manifest', 'vendor', 'vendor-detail', 'common-api', filename];
-    }
-    if(filename === 'cart') {
-      chunks = ['manifest', 'vendor', 'vendor-cart', 'common-api', filename];
-    }
-    if(filename === 'list') {
-      chunks = ['manifest', 'vendor', 'vendor-list', 'common-api', filename];
-    }
-    if(filename === 'placeOrder') {
-      chunks = ['manifest', 'vendor', 'vendor-placeOrder', 'common-api', filename];
-    }
-    if(filename === 'order') {
-      chunks = ['manifest', 'vendor', 'vendor-order', 'common-api', filename];
-    }
-    if(filename === 'myOrder') {
-      chunks = ['manifest', 'vendor', 'vendor-myOrder', 'common-api', filename];
-    }
-    if(filename === 'profile') {
-      chunks = ['manifest', 'vendor', 'vendor-profile', 'common-api', filename];
-    }
+    chunks = ['manifest', 'vendor', 'common-api', filename];
+    // if(filename === 'admin') {
+    //   chunks = ['manifest', 'vendor', 'vendor-admin', 'common-api', filename];
+    // }
+    // if(filename === 'index') {
+    //   chunks = ['manifest', 'vendor', 'vendor-index', 'common-api', filename];
+    // }
+    // if(filename === 'detail') {
+    //   chunks = ['manifest', 'vendor', 'vendor-detail', 'common-api', filename];
+    // }
+    // if(filename === 'cart') {
+    //   chunks = ['manifest', 'vendor', 'vendor-cart', 'common-api', filename];
+    // }
+    // if(filename === 'list') {
+    //   chunks = ['manifest', 'vendor', 'vendor-list', 'common-api', filename];
+    // }
+    // if(filename === 'placeOrder') {
+    //   chunks = ['manifest', 'vendor', 'vendor-placeOrder', 'common-api', filename];
+    // }
+    // if(filename === 'order') {
+    //   chunks = ['manifest', 'vendor', 'vendor-order', 'common-api', filename];
+    // }
+    // if(filename === 'myOrder') {
+    //   chunks = ['manifest', 'vendor', 'vendor-myOrder', 'common-api', filename];
+    // }
+    // if(filename === 'profile') {
+    //   chunks = ['manifest', 'vendor', 'vendor-profile', 'common-api', filename];
+    // }
 
     let conf = {
       // 模板来源
