@@ -3,7 +3,7 @@
   <div class="footer" id="footer">
     <footer>
       <van-row class="footer-box">
-        <van-col span="8" v-for="(item) in footerArr" :key="item.id">
+        <van-col span="12" v-for="(item) in footerArr" :key="item.id">
           <div class="footer-item" @click="clickFooter(item.link)">{{item.name}}</div>
         </van-col>
       </van-row>
@@ -24,13 +24,13 @@ export default {
           name: '首页',
           link: 'index.html'
         },
+//        {
+//          id: 1,
+//          name: '购物车',
+//          link: 'cart.html'
+//        },
         {
           id: 1,
-          name: '购物车',
-          link: 'cart.html'
-        },
-        {
-          id: 2,
           name: '我的',
           link: 'profile.html'
         },

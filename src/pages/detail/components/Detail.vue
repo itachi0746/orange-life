@@ -29,15 +29,15 @@
         text="客服"
         @click=""
       />
-      <van-goods-action-mini-btn
-        icon="cart-o"
-        text=""
-        @click=""
-      />
-      <van-goods-action-big-btn
-        text="加入购物车"
-        @click="clickAddCart"
-      />
+      <!--<van-goods-action-mini-btn-->
+        <!--icon="cart-o"-->
+        <!--text=""-->
+        <!--@click=""-->
+      <!--/>-->
+      <!--<van-goods-action-big-btn-->
+        <!--text="加入购物车"-->
+        <!--@click="clickAddCart"-->
+      <!--/>-->
       <van-goods-action-big-btn
         primary
         text="立即购买"
@@ -232,20 +232,7 @@
     line-height: 80px;
 
   }
-  .van-goods-action {
 
-    * {
-      font-size: 30px;
-    }
-
-  }
-  .van-goods-action>div,.van-goods-action>button {
-    height: 84px;
-  }
-  .van-button--warning,.van-button--danger {
-    background-color: $btnColor;
-    border-radius: 30px;
-  }
 
 
 </style>

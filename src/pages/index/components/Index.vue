@@ -15,8 +15,12 @@
     </header>
     <div class="banner">
       <van-swipe :autoplay="5000" indicator-color="white">
-        <van-swipe-item>1</van-swipe-item>
-        <van-swipe-item>2</van-swipe-item>
+        <van-swipe-item>
+          <img class="lunbotu" src="../assets/lunbo.png" alt="">
+        </van-swipe-item>
+        <van-swipe-item>
+          <img class="lunbotu" src="../assets/lunbo.png" alt="">
+        </van-swipe-item>
 
       </van-swipe>
     </div>
@@ -27,7 +31,9 @@
       </div>
       <div class="s-main">
         <div class="s-item" @click="clickItem">
-          <div class="s-item-img"></div>
+          <div class="s-item-img">
+            <img src="../assets/2.jpg" alt="">
+          </div>
           <div class="s-item-name">
             移动话费200元
           </div>
@@ -164,7 +170,10 @@
       .s-item-img {
         width: 100%;
         height: 200px;
-        background-color: #000000;
+        /*background-color: #000000;*/
+        img {
+          width: 100%;
+        }
       }
       .s-item-name {
         @include defaultFlex
@@ -175,5 +184,8 @@
       font-weight:bold;
     }
   }
-
+  .lunbotu {
+    width: 100%;
+    height: 100%;
+  }
 </style>
